@@ -29,16 +29,7 @@ For more advanced details please go into the file and read the doc-strings.
 >*Important Note: This will overwrite a trunk that has no interface description so
 >this script should typically be a 'one time' use right after a fabric is built.
 
-<br/><br/> 
 
-### Contributors
-******************
-
-name | email
----|---
-**Jeff Kala** | *jeff.kala@schwab.com*
-**Jose Lima** | *jose.lima@schwab.com*
-<br/><br/> 
 
 
 [CSV_FORMAT_README]: https://bitbucket.schwab.com/projects/ENS/repos/dcnm_scripts/browse/production/CSV_FORMAT_README.md
