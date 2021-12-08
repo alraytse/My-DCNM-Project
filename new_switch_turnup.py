@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-- Jeff Kala 12/19/2019
+
 python3 script
 
 This program will POAP new ToR switches, add vPC peer between them, add all the schwab specific templates.
