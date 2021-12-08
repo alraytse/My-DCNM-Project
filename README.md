@@ -52,10 +52,7 @@ For more advanced details please go into the file and read the doc-strings.
 
 <br/><br/> 
 
-### Contributors
-******************
 
-n
 
 
 [CSV_FORMAT_README]: https://bitbucket.schwab.com/projects/ENS/repos/dcnm_scripts/browse/production/CSV_FORMAT_README.md
