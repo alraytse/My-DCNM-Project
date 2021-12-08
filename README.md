@@ -1,11 +1,21 @@
-# Production DCNM API Scripts
+# New Fabric Install DCNM API Scripts
 ************************
 <br/><br/> 
 
 **A collection of Python scripts related to DCNM through its API**
 
-These scripts are in productino, they've been fully tested.
+These scripts are useful when deploying NEW fabrics.  They can be used to change
+all Access Leaf Ethernet1/1-48 port to policy "access_host" and also can be used
+to add interface descriptions to interfaces in a bulk fashion.
 
+**Order of task during a new fabric build is important.**
+
+These scripts are assuming certain task were completed before they're ran.
+1. Build Fabric, add freeform, s/w versions correct, POAP completed.
+2. Run dcnm_interface_policy.py to change all access leaf Ethernet1/1-48 to access_host.
+3. Run dcnm_interface_detail.py to add interface description to all ports.
+4. Run dcnm_bulk_create_deploy.py to create networks.
+5. Run dcnm_bulk_interface_attach.py to deploy/attach overlay networks to ports.
 
 <br/><br/> 
 
@@ -13,46 +23,22 @@ These scripts are in productino, they've been fully tested.
 
 For more advanced details please go into the file and read the doc-strings.
 
-1. dcnm_bulk_create.py
->Program will take in a CSV with subnet, vlan and create the networks.
-
-2. dcnm_bulk_network_overlay_attach.py
->Takes in a CSV with subnet,vlan,device,ports and attaches the overlay to the ports.  If the network hasn't been configured on the switch it will also configure the vxlan_profile.
-
-3. dcnm_bulk_network_overlay_attach_backout.py
->Does the opposite of the regular version.  This should only be run to backout of a failed change. It takes the same exact CSV file that was used to deploy the changes.
-
-4. new_switch_turnup.py
->This program can automate the POAP and schwab template attach for a pair of new switches.  It does everything needed to bring up a new pair of leafs into the fabric.  It will.
-    * POAP
-    * Create VPC Peer
-    * Attach all the Schwab Specific Templates
-    * Update discovery credentials.
-
->All of the needed informatino should be in a file ~/switch_turnup.key.  Its a yaml file but doesn't need to be saved as a yaml file. Keep the .key extention.  Fill in the properties.
->NOTE: If the yaml file does NOT exist then you will just get propmpted for each of the necessary peices of data.
-
-```
-    ---
-    admin_p: 
-    snmpv3_u: 
-    snmpv3_auth: 
-    snmpv3_priv: 
-    discovery_svc_account: 
-    discovery_svc_p: 
-    tacacs_secret: '<tacacs secrret with "">' #make sure single quotes are on the outside since the secret include "" around it.
-```
-
-5. utility_interface_desc_verify.py
->Can take in a CSV from the interface description bulk script and compare the CSV to what DCNM has.  This is a nice quick way to verify the interface description successfully deployed.
-
-6. dcnm_bulk_interface_desc.py
->NOTE: Formally was called dcnm_interface_detail.py.  Will take in a CSV file and deploy interface descriptions in a bulk fashion.
-
+1. dcnm_interface_policy.py
+>It will automatically change Ethernet1/1-48 on all ACCESS LEAFs from trunk_host
+>to access_host policy assuming they have NO interface description.
+>*Important Note: This will overwrite a trunk that has no interface description so
+>this script should typically be a 'one time' use right after a fabric is built.
 
 <br/><br/> 
 
+### Contributors
+******************
 
+name | email
+---|---
+**Jeff Kala** | *jeff.kala@schwab.com*
+**Jose Lima** | *jose.lima@schwab.com*
+<br/><br/> 
 
 
 [CSV_FORMAT_README]: https://bitbucket.schwab.com/projects/ENS/repos/dcnm_scripts/browse/production/CSV_FORMAT_README.md
