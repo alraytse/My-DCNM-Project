@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Used to verify after running dcnm_bulk_interface_desc.py
 
-Jeff Kala
+
 4/29/2019
 
 Used for a post check after adding interface descriptions.
