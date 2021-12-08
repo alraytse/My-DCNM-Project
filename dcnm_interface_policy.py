@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-- Jeff Kala 2/5/19
+
 python3 script
 
 Will be used to bulk update interface policies after fabric deploy.
