@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-- Jeff Kala 2/5/19
+
 python3 script
 
     Script grabs all switch/ints from the input_data and figures out what they're currently set to
