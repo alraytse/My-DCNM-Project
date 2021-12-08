@@ -55,11 +55,7 @@ For more advanced details please go into the file and read the doc-strings.
 ### Contributors
 ******************
 
-name | email
----|---
-**Jeff Kala** | *jeff.kala@schwab.com*
-**Jose Lima** | *jose.lima@schwab.com*
-<br/><br/> 
+n
 
 
 [CSV_FORMAT_README]: https://bitbucket.schwab.com/projects/ENS/repos/dcnm_scripts/browse/production/CSV_FORMAT_README.md
