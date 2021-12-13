@@ -41,11 +41,6 @@ Built binaries will be placed in dist/ and can be installed using PIP
 
 Example:
 
-* New install
->python3 -m pip install git+https://bitbucket.schwab.com/scm/ens/dcnm_core.git
-
-* Upgrade
->python3 -m pip install --upgrade git+https://bitbucket.schwab.com/scm/ens/dcnm_core.git
 
 </br>
 * Reference docs:
