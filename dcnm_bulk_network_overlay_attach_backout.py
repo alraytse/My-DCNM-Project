@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-- Jeff Kala 11/18/19
+
 python3 script
 
 Program will take in a CSV formated:
