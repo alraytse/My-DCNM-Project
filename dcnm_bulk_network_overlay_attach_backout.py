@@ -32,7 +32,7 @@ try:
 except ImportError:
     print("\nmissing dcnm core module, please install first:\n")
     print(
-        "python3 -m pip install git+https://bitbucket.schwab.com/scm/ens/dcnm_core.git"
+        "python3 -m pip install git+https://bitbucket.com/scm/ens/dcnm_core.git"
     )
     exit(1)
 
